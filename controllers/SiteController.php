@@ -65,7 +65,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $query1 = (new \yii\db\Query())
-        ->select(['drinkname', 'rating'])
+        ->select(['drinkname, rating'])
         ->from('drinks', 'drinkratings')
         ->where('drinks.drinkid = drinkratings.drinkid')
         ->groupby('drinkratings'.'drinkid');
