@@ -76,7 +76,7 @@ class UsersController extends Controller
 
   $unionQuery = new query();
   $unionQuery ->select(['drinkname'])
-  ->from(union($query, $query2))
+  ->from($query.union($query2))
   ->where(['userid' => Yii::$app->user->identity->userid]);
 
   $dataProvider = new ActiveDataProvider([
