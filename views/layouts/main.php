@@ -29,7 +29,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Html::img('MartiniThing.png', ['alt'=>Yii::$app->name]),
+        'brandLabel' => Html::img('http://web.engr.oregonstate.edu/~cramseys/ReportStuff/MartiniThing.png', ['alt'=>Yii::$app->name]),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
