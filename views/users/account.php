@@ -8,7 +8,7 @@ use app\models\Drinks;
 /* @var $this yii\web\View */
 /* @var $model app\models\Users */
 
-$this->title = $model->username.'\'s Page';
+$this->title = ucwords($model->username).'\'s Page';
 
 ?>
 <div class="users-view">
