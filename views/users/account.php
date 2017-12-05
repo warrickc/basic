@@ -16,7 +16,7 @@ $this->title = "My Account";
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->userid], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Change Password', ['update', 'id' => $model->userid], ['class' => 'btn btn-primary']) ?>
     </p>
 
 	<?php
