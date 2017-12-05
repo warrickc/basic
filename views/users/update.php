@@ -7,7 +7,7 @@ use yii\helpers\Html;
 
 $this->title = 'Change Password';
 $this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->userid, 'url' => ['view', 'id' => $model->userid]];
+$this->params['breadcrumbs'][] = ['label' => $model->username, 'url' => ['view', 'id' => $model->userid]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="users-update">
