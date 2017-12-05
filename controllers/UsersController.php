@@ -79,9 +79,9 @@ class UsersController extends Controller
   ->from(union($query, $query2))
   ->where(['userid' => Yii::$app->user->identity->userid]);
 
-  $dataProvider = new ActiveDataProvider(
-      ['query' => $unionQuery],
-    );
+  $dataProvider = new ActiveDataProvider([
+        'query' => $unionQuery,
+    ]);
 
 	return $this->render('account', [
 		'model' => $this->findModel(Yii::$app->user->identity->userid),
