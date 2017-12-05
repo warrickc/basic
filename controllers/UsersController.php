@@ -65,14 +65,18 @@ class UsersController extends Controller
 	/*$query = new Query;
 	$userID = Yii::$app->user->identity->userid;
 	$query->select('username')->from('users')->where(['userid' => $userID]);*/
-
-	$drinkIngred = new ActiveDataProvider([
-		'query' => Drinks::find()->joinWith('ingredientslists'),//->joinWith('ingredients'),
+  $query = new query()
+  $query ->select
+  (['drinkname', 'averagerating'])
+  ->from('drinks')
+  ->orderBy(['drinkid' => SORT_DESC]);
+	$dataProvider = new ActiveDataProvider([
+		'query' => $query,
 		]);
 
 	return $this->render('account', [
 		'model' => $this->findModel(Yii::$app->user->identity->userid),
-		'DataProvider' => $drinkIngred,
+		'DataProvider' => $dataProvider,
 		//'currUser' => $query,
 	]);
     }
