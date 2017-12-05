@@ -67,12 +67,21 @@ class UsersController extends Controller
 	$query->select('username')->from('users')->where(['userid' => $userID]);*/
   $query = new query();
   $query ->select
-  (['drinkname', 'averagerating'])
-  ->from('drinks')
-  ->orderBy(['drinkid' => SORT_DESC]);
-	$dataProvider = new ActiveDataProvider([
-		'query' => $query,
-		]);
+  (['drinkid', 'userid'])
+  ->from('drinkratings');
+
+  $query2 = new query();
+  $query ->select(['drinkname', 'drinkid'])
+  ->from('drinks');
+
+  $unionQuery = new query();
+  $unionQuery ->select(['drinkname'])
+  ->from(union($query, $query2))
+  ->where(['userid' = Yii::$app->user->identity->userid]);
+
+  $dataProvider = new ActiveDataProvider(
+      ['query' => $unionQuery],
+    )
 
 	return $this->render('account', [
 		'model' => $this->findModel(Yii::$app->user->identity->userid),

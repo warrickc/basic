@@ -42,9 +42,8 @@ $this->title = "My Account";
     </div>
 
    <div class="col-md-5 pull-right">
-     <?= DetailView::widget([
+     <?= GridView::widget([
        'dataProvider' => $dataProvider,
-       'model' => $model,
        'columns' => [
          'label' => 'Drink Name',
          'value' => 'drinkname',
