@@ -53,7 +53,7 @@ class DrinksController extends Controller
     public function actionView($id)
     {
         $query = new query();
-        $query-> select(['ingredients', 'ingredientname', 'quantity'])
+        $query-> select(['ingredientname', 'quantity'])
         ->from(['ingredientslist', 'ingredients'])
         ->where("ingredientslist.ingredientid = ingredients.ingredientid AND ingredientslist.drinkid = $id");
         $otherdataProvider = new ActiveDataProvider([
