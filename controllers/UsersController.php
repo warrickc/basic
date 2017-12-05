@@ -68,7 +68,7 @@ class UsersController extends Controller
   $currentUser = Yii::$app->user->identity->userid;
   $query = new query();
   $query -> select(['drinkname', 'userid', 'rating'])
-  ->from(['u' => 'drinks', 'drinkratings'])
+  ->from(['drinks', 'drinkratings'])
   ->where("userid = $currentUser AND drinks.drinkid = drinkratings.drinkid")
   ->groupby('drinkname');
 
