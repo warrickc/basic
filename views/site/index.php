@@ -35,13 +35,13 @@ $this->title = 'Barfly';
                     'columns' => [
                       ['class' => 'yii\grid\SerialColumn'],
                       'drinkname',
-                      /*'rating'*/
-                      [
+                      'rating',
+                      /*[
                         'label' => 'Rating',
                         'value' => function($data){
                           return Drinks::get_drink_ratings($data->drinkid);
                         },
-                      ],
+                      ],*/
                     ],
                   ]) ?>
               </div>
