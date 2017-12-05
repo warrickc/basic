@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             /*'ingredientid',*/
-            'ingredientname',
+            /*'ingredientname',*/
             'type',
             'family',
         ],
