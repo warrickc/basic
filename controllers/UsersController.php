@@ -65,7 +65,7 @@ class UsersController extends Controller
 	/*$query = new Query;
 	$userID = Yii::$app->user->identity->userid;
 	$query->select('username')->from('users')->where(['userid' => $userID]);*/
-  $query = new query()
+  $query = new query();
   $query ->select
   (['drinkname', 'averagerating'])
   ->from('drinks')
