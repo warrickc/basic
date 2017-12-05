@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
 
     <?= GridView::widget([
-      'dataprovider' => $dataProvider,
+      'dataProvider' => $dataProvider,
       'columns' => [
         ['label' => 'Ingredient',
         'value' => 'ingredientname'],
