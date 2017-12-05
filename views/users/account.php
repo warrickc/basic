@@ -38,6 +38,9 @@ $this->title = "My Account";
             'email:email',
         ],
     ]) ?>
+    <p>
+     <?= Html::a('Change Password', ['update', 'id' => $model->userid], ['class' => 'btn btn-primary']) ?>
+   </p>
     </div>
 
    <div class="col-md-5 pull-right">
@@ -52,8 +55,6 @@ $this->title = "My Account";
        ],
      ]) ?>
    </div>
-   <div>
-       <?= Html::a('Change Password', ['update', 'id' => $model->userid], ['class' => 'btn btn-primary']) ?>
-   </div>
+
 
 </div>
