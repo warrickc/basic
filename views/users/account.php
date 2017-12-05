@@ -45,7 +45,7 @@ $this->title = "My Account";
      <?= GridView::widget([
        'dataProvider' => $dataProvider,
        'columns' => [
-         'label' => 'Drink Name',
+         ['label' => 'Drink Name',
          'value' => 'drinkname',
        ],
        [
