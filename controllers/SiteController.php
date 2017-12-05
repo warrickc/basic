@@ -74,7 +74,7 @@ class SiteController extends Controller
         $query2 ->select
         (['drinkname'])
         ->from('drinks')
-        ->orderBy(['drinkid' => SORT_DESC]);
+        ->orderBy(['drinkid' => SORT_DESC])
         ->limit(5);
         /*$query2 = (new \yii\db\Query())
         ->select("rating, drinkid")
@@ -96,7 +96,7 @@ class SiteController extends Controller
         ]);*/
         return $this->render('index', [
           'dataProvider' => $dataProvider,
-          'otherdataprovider' => $otherdataProvider,
+          'otherdataProvider' => $otherdataProvider,
         ]);
 
     }

@@ -24,12 +24,12 @@ $this->title = 'Barfly';
       <div class="body-content">
 
           <div class="row">
-              <div class="col-md-5 pull-left">
+              <div class="col-md-3">
                   <h2>News Feed</h2>
                   <?= GridView::widget([
                     'dataProvider' => $otherdataProvider,
                     'columns' => [
-                    [ 'label' => 'Drink Name',
+                    [ 'label' => 'Newest Drinks',
                       'value' => 'drinkname'],
 
                       /*[
