@@ -79,7 +79,7 @@ class SiteController extends Controller
         //->limit(3);
         $dataProvider = new ActiveDataProvider([
           //'query' => $unionQuery,
-          'query' -> $query1,
+          'query' => $query1,
         ]);
         /*$query = Drinks::find();
         $dataProvider = new ActiveDataProvider([
