@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 use yii\grid\GridView;
 use app\models\Drinks;
+use yii\helpers\Html;
 
 $this->title = 'Barfly';
 ?>
