@@ -52,8 +52,8 @@ $this->title = "My Account";
        ],
      ]) ?>
    </div>
-   <p>
+   <div>
        <?= Html::a('Change Password', ['update', 'id' => $model->userid], ['class' => 'btn btn-primary']) ?>
-   </p>
+   </div>
 
 </div>
