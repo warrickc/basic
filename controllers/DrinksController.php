@@ -8,6 +8,7 @@ use app\models\DrinksSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\db\Query;
 
 /**
  * DrinksController implements the CRUD actions for Drinks model.
