@@ -72,7 +72,7 @@ class SiteController extends Controller
         ->from('drinkratings');
         $unionQuery = (new \yii\db\Query())
         ->from(["drinkname, rating" => $query1->union($query2)])
-        ->orderBy(['rating' => SORT_DESC])
+        /*->orderBy(['rating' => SORT_DESC])*/
         ->limit(3);
         $dataProvider = new ActiveDataProvider([
           'query' => $unionQuery,
