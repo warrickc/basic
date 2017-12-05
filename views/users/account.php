@@ -8,7 +8,7 @@ use app\models\Drinks;
 /* @var $this yii\web\View */
 /* @var $model app\models\Users */
 
-$this->title = "My Account";
+$this->title = $model->username;
 
 ?>
 <div class="users-view">
