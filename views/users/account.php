@@ -15,9 +15,7 @@ $this->title = "My Account";
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Change Password', ['update', 'id' => $model->userid], ['class' => 'btn btn-primary']) ?>
-    </p>
+
 
 	<?php
 		/*DetailView::widget([
@@ -30,6 +28,7 @@ $this->title = "My Account";
 
 
     <div class="col-md-5 pull-left">
+      <h3>Account Information</h3>
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
@@ -42,6 +41,7 @@ $this->title = "My Account";
     </div>
 
    <div class="col-md-5 pull-right">
+     <h3>Your rated drinks</h3>
      <?= GridView::widget([
        'dataProvider' => $dataProvider,
        'columns' => [
@@ -52,6 +52,8 @@ $this->title = "My Account";
        ],
      ]) ?>
    </div>
-
+   <p>
+       <?= Html::a('Change Password', ['update', 'id' => $model->userid], ['class' => 'btn btn-primary']) ?>
+   </p>
 
 </div>
