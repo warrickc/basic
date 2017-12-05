@@ -67,7 +67,7 @@ class SiteController extends Controller
         $query1 = (new \yii\db\Query())
         ->select(['drinkname', 'rating'])
         ->from('drinks', 'drinkratings')
-        ->where('drinks.drinkid' = 'drinkratings'.'drinkid')
+        ->where('drinks.drinkid = drinkratings.drinkid')
         ->groupby('drinkratings'.'drinkid');
 
         /*$query2 = (new \yii\db\Query())
