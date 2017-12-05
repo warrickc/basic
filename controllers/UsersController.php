@@ -81,7 +81,7 @@ class UsersController extends Controller
 
   $dataProvider = new ActiveDataProvider(
       ['query' => $unionQuery],
-    )
+    );
 
 	return $this->render('account', [
 		'model' => $this->findModel(Yii::$app->user->identity->userid),
