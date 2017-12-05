@@ -29,7 +29,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Html::img('MartiniThing.png', ['alt'=>Yii::$app->name]),
+        'brandLabel' => Html::img('http://web.engr.oregonstate.edu/~cramseys/ReportStuff/MartiniThing.png', ['alt'=>Yii::$app->name]),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -42,7 +42,6 @@ AppAsset::register($this);
             ['label' => 'My Account', 'url' => ['users/account'], 'visible' => !Yii::$app->user->isGuest],
             ['label' => 'Drinks', 'url' => ['drinks/index']],
             ['label' => 'Ingredients', 'url' => ['ingredients/index']],
-            ['label' => 'Drink Ratings', 'url' => ['drinkratings/index']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
