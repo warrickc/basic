@@ -8,7 +8,16 @@ $this->title = 'Barfly';
 ?>
 <div class="site-index">
       <div class="jumbotron">
-          <h1>HOME</h1>
+          <h1>BARFLY</h1>
+          <?php if(Yii::$app->user->isGuest){
+            echo Html::tag('h2','Welcome to the super drink database');
+            echo Html::a('Sign in or Sign up', ['login'], ['class' => 'btn btn-success']);
+            else{
+              $username = Html::encode($user->username);
+              echo Html::tag('h2', 'Welcome'+$username);
+            }
+          }?>
+
       </div>
 
       <div class="body-content">
