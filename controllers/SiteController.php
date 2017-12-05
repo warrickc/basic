@@ -70,6 +70,12 @@ class SiteController extends Controller
         ->from('drinks')
         ->orderBy(['averagerating' => SORT_DESC]);
 
+        $query2 = new query();
+        $query2 ->select
+        (['drinkname'])
+        ->from('drinks')
+        ->orderBy(['drinkid' => SORT_DESC]);
+        ->limit(5);
         /*$query2 = (new \yii\db\Query())
         ->select("rating, drinkid")
         ->from('drinkratings');
@@ -81,12 +87,16 @@ class SiteController extends Controller
           //'query' => $unionQuery,
           'query' => $query,
         ]);
+        $otherdataProvider = new ActiveDataProvider([
+          'query' => $query2,
+        ]);
         /*$query = Drinks::find();
         $dataProvider = new ActiveDataProvider([
           'query' => $query,
         ]);*/
         return $this->render('index', [
           'dataProvider' => $dataProvider,
+          'otherdataprovider' => $otherdataProvider,
         ]);
 
     }

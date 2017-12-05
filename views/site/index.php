@@ -26,11 +26,20 @@ $this->title = 'Barfly';
           <div class="row">
               <div class="col-md-5 pull-left">
                   <h2>News Feed</h2>
+                  <?= GridView::widget([
+                    'dataProvider' => $otherdataProvider,
+                    'columns' => [
+                    [ 'label' => 'Drink Name',
+                      'value' => 'drinkname'],
 
-                  <p>Recent information about drinks go here</p>
-                  <p>New Drinks</p>
-                  <p>New bars</p>
-                  <p>Menu changes</p>
+                      /*[
+                        'label' => 'Rating',
+                        'value' => function($data){
+                          return Drinks::get_drink_ratings($data->drinkid);
+                        },
+                      ],*/
+                    ],
+                  ]) ?>
 
               </div>
               <div class="col-md-5 pull-right">
