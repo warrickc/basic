@@ -65,22 +65,14 @@ class UsersController extends Controller
 	/*$query = new Query;
 	$userID = Yii::$app->user->identity->userid;
 	$query->select('username')->from('users')->where(['userid' => $userID]);*/
+  $currentUser = Yii:$app->user->identity->userid;
   $query = new query();
-  $query ->select
-  (['drinkid', 'userid'])
-  ->from('drinkratings');
-
-  $query2 = new query();
-  $query ->select(['drinkname', 'drinkid'])
-  ->from('drinks');
-
-  $unionQuery = new query();
-  $unionQuery ->select(['drinkname'])
-  ->from($query.union($query2))
-  ->where(['userid' => Yii::$app->user->identity->userid]);
+  $query -> select(['drinkname', 'userid'])
+  ->from(['u' => 'drinks', 'drinkratings']);
+  ->where(['userid' => $currentUser])
 
   $dataProvider = new ActiveDataProvider([
-        'query' => $unionQuery,
+        'query' => $query,
     ]);
 
 	return $this->render('account', [
