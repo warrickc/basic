@@ -37,7 +37,6 @@ class DrinksController extends Controller
     {
         $searchModel = new DrinksSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -51,8 +50,16 @@ class DrinksController extends Controller
      */
     public function actionView($id)
     {
+        $query = new query();
+        $query-> select('ingredients', 'ingredientname', 'quantity')
+        ->from(['ingredientslist', 'ingredients'])
+        ->where("ingredientslist.ingredientid = ingredients.ingredientid AND ingredientslist.drinkid = $id")
+        $otherdataProvider = new ActiveDataProvider([
+          'query' => $query,
+        ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'dataProvider' => $otherdataProvider,
         ]);
     }
 

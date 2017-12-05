@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\widgets\GridView;
+
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Drinks */
@@ -21,6 +23,16 @@ $this->params['breadcrumbs'][] = $this->title;
             /*'drinkname',*/
             'instructions',
         ],
+    ]) ?>
+
+    <?= GridView::widget([
+      'dataprovider' => $dataProvider,
+      'columns' => [
+        ['label' => 'Ingredient',
+        'value' => 'ingredientname'],
+        ['label' => 'Quantity',
+        'value' => 'quantity']
+      ],
     ]) ?>
 
 </div>
