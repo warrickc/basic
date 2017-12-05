@@ -35,7 +35,7 @@ class Drinks extends \yii\db\ActiveRecord
         return [
             [['drinkname', 'instructions'], 'required'],
             [['drinkname', 'instructions'], 'string', 'max' => 250],
-            [['averagerating'], 'float', 'max' => 10],
+            [['averagerating'], 'number', 'max' => 10],
             [['drinkname'], 'unique'],
         ];
     }
