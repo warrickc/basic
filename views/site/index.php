@@ -33,9 +33,11 @@ $this->title = 'Barfly';
                   <?= GridView::widget([
                     'dataProvider' => $dataProvider,
                     'columns' => [
-                      ['class' => 'yii\grid\SerialColumn'],
-                      'drinkname',
-                      'rating',
+                    [ 'label' => 'Drink Name',
+                      'value' => 'drinkname'],
+                    [ 'label' => 'Rating',
+                      'value' => 'averagerating'],
+
                       /*[
                         'label' => 'Rating',
                         'value' => function($data){

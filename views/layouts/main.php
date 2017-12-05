@@ -42,7 +42,6 @@ AppAsset::register($this);
             ['label' => 'My Account', 'url' => ['users/account'], 'visible' => !Yii::$app->user->isGuest],
             ['label' => 'Drinks', 'url' => ['drinks/index']],
             ['label' => 'Ingredients', 'url' => ['ingredients/index']],
-            ['label' => 'Drink Ratings', 'url' => ['drinkratings/index']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (

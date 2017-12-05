@@ -64,11 +64,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $query1 = (new \yii\db\Query())
-        ->select(['drinkname'],['rating'])
-        ->from(['drinks'], ['drinkratings'])
-        ->where('drinks.drinkid = drinkratings.drinkid')
-        ->groupby('drinkratings.drinkid');
+        $query = new query();
+        $query ->select
+        (['drinkname', 'averagerating'])
+        ->from('drinks')
+        ->orderBy(['averagerating' => SORT_DESC]);
 
         /*$query2 = (new \yii\db\Query())
         ->select("rating, drinkid")
@@ -79,7 +79,7 @@ class SiteController extends Controller
         //->limit(3);
         $dataProvider = new ActiveDataProvider([
           //'query' => $unionQuery,
-          'query' => $query1,
+          'query' => $query,
         ]);
         /*$query = Drinks::find();
         $dataProvider = new ActiveDataProvider([
