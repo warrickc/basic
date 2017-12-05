@@ -78,7 +78,8 @@ class SiteController extends Controller
         ->orderBy(['rating' => SORT_DESC])*/
         //->limit(3);
         $dataProvider = new ActiveDataProvider([
-          'query' => $unionQuery,
+          //'query' => $unionQuery,
+          'query' -> $query1,
         ]);
         /*$query = Drinks::find();
         $dataProvider = new ActiveDataProvider([
