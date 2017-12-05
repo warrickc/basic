@@ -53,7 +53,7 @@ class DrinksController extends Controller
         $query = new query();
         $query-> select('ingredients', 'ingredientname', 'quantity')
         ->from(['ingredientslist', 'ingredients'])
-        ->where("ingredientslist.ingredientid = ingredients.ingredientid AND ingredientslist.drinkid = $id")
+        ->where("ingredientslist.ingredientid = ingredients.ingredientid AND ingredientslist.drinkid = $id");
         $otherdataProvider = new ActiveDataProvider([
           'query' => $query,
         ]);
