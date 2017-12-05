@@ -65,15 +65,18 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $query1 = (new \yii\db\Query())
-        ->select("drinkname, drinkid")
-        ->from('drinks');
-        $query2 = (new \yii\db\Query())
+        ->select(['drinkname', 'rating'])
+        ->from('drinks', 'drinkratings')
+        ->where('drinks.drinkid' = 'drinkratings'.'drinkid')
+        ->groupby('drinkratings'.'drinkid');
+
+        /*$query2 = (new \yii\db\Query())
         ->select("rating, drinkid")
         ->from('drinkratings');
         $unionQuery = (new \yii\db\Query())
         ->from(["drinkname, rating" => $query1->union($query2)])
-        /*->orderBy(['rating' => SORT_DESC])*/
-        ->limit(3);
+        ->orderBy(['rating' => SORT_DESC])*/
+        //->limit(3);
         $dataProvider = new ActiveDataProvider([
           'query' => $unionQuery,
         ]);
