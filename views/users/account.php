@@ -42,7 +42,7 @@ $this->title = "My Account";
     </div>
 
    <div class="col-md-5 pull-right">
-     <?= GridView::widget([
+     <?= DetailView::widget([
        'dataProvider' => $dataProvider,
        'model' => $model,
        'columns' => [
