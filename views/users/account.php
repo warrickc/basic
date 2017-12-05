@@ -46,11 +46,9 @@ $this->title = "My Account";
        'dataProvider' => $dataProvider,
        'columns' => [
          ['label' => 'Drink Name',
-         'value' => 'drinkname',
-       ],
-       [
-         'label' => 'Rating',
-         'value' => 'drinkname',
+         'value' => 'drinkname',],
+         ['label' => 'Rating',
+         'value' => 'drinkname',],
        ],
      ]) ?>
    </div>
