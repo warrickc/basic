@@ -76,7 +76,7 @@ class UsersController extends Controller
 
 	return $this->render('account', [
 		'model' => $this->findModel(Yii::$app->user->identity->userid),
-		'DataProvider' => $dataProvider,
+		'dataProvider' => $dataProvider,
 		//'currUser' => $query,
 	]);
     }
