@@ -48,7 +48,7 @@ $this->title = "My Account";
          ['label' => 'Drink Name',
          'value' => 'drinkname',],
          ['label' => 'Rating',
-         'value' => 'drinkname',],
+         'value' => 'rating',],
        ],
      ]) ?>
    </div>
