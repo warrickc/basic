@@ -26,9 +26,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
 
             /*'ingredientid',*/
-            'ingredientname',
-            'type',
-            'family',
+            ['label' => 'Ingredient Name',
+            'value' => 'ingredientname',],
+            ['label' => 'Type',
+            'value' => 'type'],
+            ['label' => 'Family',
+            'value''family'],
 
         ],
     ]); ?>

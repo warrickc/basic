@@ -26,7 +26,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
 
             /*'drinkid',*/
-            'drinkname',
+            ['label' => 'Drink Name',
+            'value' => 'drinkname'],
 
             ['class' => 'yii\grid\ActionColumn',
               'template' => '{view}'
