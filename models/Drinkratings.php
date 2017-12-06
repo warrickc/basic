@@ -30,7 +30,7 @@ class Drinkratings extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['rating', 'userid', 'drinkid'], 'required'],
+            ['rating', 'userid', 'drinkid'],
             [['rating', 'userid', 'drinkid'], 'integer'],
             [['drinkid'], 'exist', 'skipOnError' => true, 'targetClass' => Drinkratings::className(), 'targetAttribute' => ['drinkid' => 'drinkid']],
             [['userid'], 'exist', 'skipOnError' => true, 'targetClass' => Users::className(), 'targetAttribute' => ['userid' => 'userid']],
