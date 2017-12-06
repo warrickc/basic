@@ -15,7 +15,7 @@ $this->title = 'Barfly';
             echo Html::a('Click to Sign In or Sign Up', ['login'], ['class' => 'btn btn-success']);
           }
             else{
-              $username = uc(Yii::$app->user->identity->username);
+              $username = ucwords(Yii::$app->user->identity->username);
               echo Html::tag('h2', "Welcome ".$username."!");
             }?>
 
