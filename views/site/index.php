@@ -17,8 +17,7 @@ $this->title = 'Barfly';
             else{
               $username = uc(Yii::$app->user->identity->username);
               echo Html::tag('h2', "Welcome ".$username."!");
-            }
-          }?>
+            }?>
 
       </div>
 
