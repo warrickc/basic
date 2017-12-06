@@ -94,7 +94,8 @@ class UsersController extends Controller
         $model = new Users();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->userid]);
+            Yii::$app->user->switchIdentity($model);
+            return $this->redirect(['/site/index', 'id' => $model->userid]);
         } else {
             return $this->render('create', [
                 'model' => $model,
