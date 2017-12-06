@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
       5 => '5 - Our Lord and Savior Curtis Warrick'
     ]) ?>
     <div>
-      <?= Html::submitButton('UpdateRating'['class' => 'btn btn-sucess']) ?>
+      <?= Html::submitButton('UpdateRating', ['class' => 'btn btn-sucess']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
