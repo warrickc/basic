@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['label' => 'Type',
             'value' => 'type'],
             ['label' => 'Family',
-            'value''family'],
+            'value' => 'family'],
 
         ],
     ]); ?>
