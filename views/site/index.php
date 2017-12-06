@@ -11,8 +11,8 @@ $this->title = 'Barfly';
       <div class="jumbotron">
           <h1>BARFLY</h1>
           <?php if(Yii::$app->user->isGuest){
-            echo Html::tag('h2','Welcome to the super drink database');
-            echo Html::a('Sign in or Sign up', ['login'], ['class' => 'btn btn-success']);
+            echo Html::tag('h2','Welcome to the drink super(ish)-database!');
+            echo Html::a('Click to Sign In or Sign Up', ['login'], ['class' => 'btn btn-success']);
             if(!Yii::$app->user->isGuest){
               $username = Yii::$app->user->identity->username;
               echo Html::tag('h2', "Welcome $username");
@@ -28,6 +28,7 @@ $this->title = 'Barfly';
                   <h2>News Feed</h2>
                   <?= GridView::widget([
                     'dataProvider' => $otherdataProvider,
+                    'summary' => "",
                     'columns' => [
                     [ 'label' => 'Newest Drinks',
                       'value' => 'drinkname'],
@@ -51,6 +52,7 @@ $this->title = 'Barfly';
                   </ul>-->
                   <?= GridView::widget([
                     'dataProvider' => $dataProvider,
+                    'summary' => "",
                     'columns' => [
                     [ 'label' => 'Drink Name',
                       'value' => 'drinkname'],

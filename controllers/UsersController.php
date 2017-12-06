@@ -74,6 +74,7 @@ class UsersController extends Controller
 
   $dataProvider = new ActiveDataProvider([
         'query' => $query,
+        'pagination' => false,
     ]);
 
 	return $this->render('account', [

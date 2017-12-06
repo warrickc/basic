@@ -44,9 +44,10 @@ $this->title = ucwords($model->username).'\'s Page';
     </div>
 
    <div class="col-md-5 pull-right">
-     <h3>Your rated drinks</h3>
+     <h3>Your Recent Ratings</h3>
      <?= GridView::widget([
        'dataProvider' => $dataProvider,
+       'summary' => "",
        'columns' => [
          ['label' => 'Drink Name',
          'value' => 'drinkname',],
