@@ -131,7 +131,7 @@ class DrinksController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-    public function actionUpdateRating($id){
+    public function actionRating($id){
       $currentUser = Yii::$app->user->identity->userid;
       $currentRating = Drinkratings::find()->where("userid = $currentUser AND drinkid = $id");
       return $this->render('view', [
