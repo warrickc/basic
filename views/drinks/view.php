@@ -35,4 +35,18 @@ $this->params['breadcrumbs'][] = $this->title;
       ],
     ]) ?>
 
+    <?php $form = ActiveForm::begin(); ?>
+    <?= $form->field($currentRating, 'rating')->dropdownList([
+      1 => '1 - Sean',
+      2 => '2 - Not quite Sean',
+      3 => '3 - David',
+      4 => '4 - Almost Perfect',
+      5 => '5 - Our Lord and Savior Curtis Warrick'
+    ]) ?>
+    <div>
+      <?= Html::submitButton('UpdateRating'['class' => 'btn btn-sucess']) ?>
+    </div>
+
+    <?php ActiveForm::end(); ?>
+
 </div>
