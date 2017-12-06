@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Drinks;
 use app\models\DrinksSearch;
+use app\models\Drinkratings;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -132,7 +133,7 @@ class DrinksController extends Controller
     }
     public function actionUpdateRating($id){
       $currentUser = Yii::$app->user->identity->userid;
-      $currentRating = Drinksrating::find()->where("userid = $currentUser AND drinkid = $id");
+      $currentRating = Drinkratings::find()->where("userid = $currentUser AND drinkid = $id");
       return $this->render('view', [
           'currentRating' => $currentRating,
       ]);
