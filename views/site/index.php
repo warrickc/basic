@@ -14,8 +14,8 @@ $this->title = 'Barfly';
             echo Html::tag('h2','Welcome to the drink super(ish)-database!');
             echo Html::a('Click to Sign In or Sign Up', ['login'], ['class' => 'btn btn-success']);
             if(!Yii::$app->user->isGuest){
-              $username = Yii::$app->user->identity->username;
-              echo Html::tag('h2', "Welcome $username");
+              $username = uc(Yii::$app->user->identity->username);
+              echo Html::tag('h2', "Welcome ".$username."!");
             }
           }?>
 
