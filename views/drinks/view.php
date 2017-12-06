@@ -34,20 +34,11 @@ $this->params['breadcrumbs'][] = $this->title;
         ['label' => 'Quantity',
         'value' => 'quantity']
       ],
-    ]) ?>
+    ])
+    echo Html::a('Rate', ['_rateform'], ['class' => 'btn btn-success']);
 
-    <?php $form = ActiveForm::begin(); ?>
-    <?= $form->field($rate, 'rating')->dropdownList([
-      1 => '1 - Sean',
-      2 => '2 - Not quite Sean',
-      3 => '3 - David',
-      4 => '4 - Almost Perfect',
-      5 => '5 - Our Lord and Savior Curtis Warrick'
-    ]) ?>
-    <div class="form-group">
-      <?= Html::submitButton('Submit', ['class' => 'btn btn-primary']) ?>
-    </div>
+    ?>
 
-    <?php ActiveForm::end(); ?>
+
 
 </div>
