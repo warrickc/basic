@@ -36,9 +36,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'value' => 'quantity']
       ],
     ]) ?>
+    <div class="pull-left">
     <?php echo Html::tag('h3', "Average Rating: ".$model->averagerating); ?>
     <?php echo Html::a('Rate', ['/drinkratings/update', 'userid' => Yii::$app->user->identity->userid, 'drinkid' => $model->drinkid], ['class' => 'btn btn-success']); ?>
-
+    </div>
+    <div class="pull-right">
+      <?php echo Html::a('Add Ingredients', ['/ingredientlist/update', 'id' => $model->drinkid], ['class' => 'btn btn-success']); ?>
+    </div>
 
 
 </div>
