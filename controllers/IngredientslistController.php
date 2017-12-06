@@ -67,7 +67,7 @@ class IngredientslistController extends Controller
         $model = new Ingredientslist();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'drinkid' => $model->drinkid, 'ingredientid' => $model->ingredientid]);
+            return $this->redirect(['/drinks/index', 'drinkid' => $model->drinkid, 'ingredientid' => $model->ingredientid]);
         } else {
             return $this->render('create', [
                 'model' => $model,
