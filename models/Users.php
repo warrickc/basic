@@ -38,6 +38,8 @@ class Users extends \yii\db\ActiveRecord implements IdentityInterface
         return [
             [['username', 'firstname', 'lastname', 'password', 'email'], 'required'],
             [['username', 'firstname', 'lastname', 'password', 'email'], 'string', 'max' => 250],
+            array('username','unique','message'=>'{attribute}:{value} already exists!'),
+            array('email','unique','message'=>'{attribute}:{value} already exists!'),
         ];
     }
 
@@ -57,40 +59,40 @@ class Users extends \yii\db\ActiveRecord implements IdentityInterface
     }
 
     public function validatePassword($password)
-    {   
+    {
         if ($this->password == $password)
             return true;
         else
             return false;
-    }   
+    }
 
     public static function findIdentityByAccessToken($token, $type = null)
-    {   
+    {
         throw new NotSupportedException('FindIdentityByAccessToken is not implemented.');
-    }   
+    }
 
     public static function findIdentity($id)
-    {   
+    {
         return static::findOne($id);
-    }   
+    }
 
     public static function findByUsername($username)
-    {   
+    {
         return static::findOne(['username' => $username]);
-    }   
+    }
 
     public function getId()
-    {   
+    {
         return $this->userid;
-    }   
+    }
 
     public function getAuthKey()
-    {   
+    {
         return null;
-    }   
+    }
 
     public function validateAuthKey($authKey)
-    {   
+    {
         return $this->authKey === $authKey;
     }
 }

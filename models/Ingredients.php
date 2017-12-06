@@ -35,6 +35,7 @@ class Ingredients extends \yii\db\ActiveRecord
             [['ingredientname'], 'string', 'max' => 250],
             [['type', 'family'], 'string', 'max' => 256],
             [['ingredientname'], 'unique'],
+            array('ingredientname','unique','message'=>'{attribute}:{value} already exists!'),
         ];
     }
 

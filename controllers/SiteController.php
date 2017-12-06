@@ -12,6 +12,7 @@ use app\models\ContactForm;
 use yii\data\ActiveDataProvider;
 use yii\db\Query;
 use app\models\Drinks;
+use yii\data\Pagination;
 
 class SiteController extends Controller
 {
@@ -68,7 +69,8 @@ class SiteController extends Controller
         $query ->select
         (['drinkname', 'averagerating'])
         ->from('drinks')
-        ->orderBy(['averagerating' => SORT_DESC]);
+        ->orderBy(['averagerating' => SORT_DESC])
+        ->limit(5);
 
         $query2 = new query();
         $query2 ->select
@@ -86,9 +88,11 @@ class SiteController extends Controller
         $dataProvider = new ActiveDataProvider([
           //'query' => $unionQuery,
           'query' => $query,
+          'pagination' => false,
         ]);
         $otherdataProvider = new ActiveDataProvider([
           'query' => $query2,
+          'pagination' => false,
         ]);
         /*$query = Drinks::find();
         $dataProvider = new ActiveDataProvider([

@@ -37,6 +37,7 @@ class Drinks extends \yii\db\ActiveRecord
             [['drinkname', 'instructions'], 'string', 'max' => 250],
             [['averagerating'], 'number', 'max' => 10],
             [['drinkname'], 'unique'],
+            array('drinkname','unique','message'=>'{attribute}:{value} already exists!'),
         ];
     }
 
