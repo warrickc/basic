@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'value' => 'quantity']
       ],
     ]) ?>
-    <?php echo Html::a('Rate', ['_rateform'], ['class' => 'btn btn-success']); ?>
+    <?php echo Html::a('Rate', ['/drinkratings/update'], ['class' => 'btn btn-success']); ?>
 
 
 </div>
