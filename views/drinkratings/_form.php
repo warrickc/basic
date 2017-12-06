@@ -14,9 +14,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'rating')->textInput() ?>
 
-    <?= $form->field($model, 'userid')->textInput() ?>
+    <!--<?= $form->field($model, 'userid')->textInput() ?>
 
-    <?= $form->field($model, 'drinkid')->textInput() ?>
+    <?= $form->field($model, 'drinkid')->textInput() ?>-->
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
