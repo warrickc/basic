@@ -30,9 +30,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'type',
             'family',
 
-            ['class' => 'yii\grid\ActionColumn',
-              'template' => '{view}'
-            ],
         ],
     ]); ?>
 </div>
