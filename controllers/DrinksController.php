@@ -53,8 +53,9 @@ class DrinksController extends Controller
      */
     public function actionView($id)
     {
+        $currentRating = new Drinkratings();
         $currentUser = Yii::$app->user->identity->userid;
-        $currentRating = Drinkratings::model()->find()->where("userid = $currentUser AND drinkid = $id");
+        $currentRating = Drinkratings::find()->where("userid = $currentUser AND drinkid = $id");
 
         $query = new query();
         $query-> select(['ingredientname', 'quantity'])
