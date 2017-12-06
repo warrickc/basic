@@ -53,6 +53,9 @@ class DrinksController extends Controller
      */
     public function actionView($id)
     {
+        $currentUser = Yii::$app->user->identity->userid;
+        $currentRating = Drinkratings::find()->where("userid = $currentUser AND drinkid = $id");
+
         $query = new query();
         $query-> select(['ingredientname', 'quantity'])
         ->from(['ingredientslist', 'ingredients'])
@@ -63,6 +66,7 @@ class DrinksController extends Controller
         return $this->render('view', [
             'model' => $this->findModel($id),
             'dataProvider' => $otherdataProvider,
+            'currentRating' => $currentRating,
         ]);
     }
 
@@ -132,10 +136,6 @@ class DrinksController extends Controller
         }
     }
     public function actionRating($id){
-      $currentUser = Yii::$app->user->identity->userid;
-      $currentRating = Drinkratings::find()->where("userid = $currentUser AND drinkid = $id");
-      return $this->render('view', [
-          'currentRating' => $currentRating,
-      ]);
+
     }
 }
