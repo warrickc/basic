@@ -87,7 +87,7 @@ class DrinkratingsController extends Controller
         $model = $this->findModel($userid, $drinkid);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['\drinks\view', 'drinkid' => $model->drinkid]);
+            return $this->redirect(['/drinks/view', 'drinkid' => $model->drinkid]);
         } else {
             return $this->render('update', [
                 'model' => $model,
