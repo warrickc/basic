@@ -135,7 +135,7 @@ class DrinksController extends Controller
     public function actionRate($id){
       $rate = new Drinksrating();
       $rate->userid = Yii::$app->user->identity->userid;
-      $rate->drinkid = $id
+      $rate->drinkid = $id;
       if($rate->load(Yii::$app->request->post()) && $rate->validate()) {
         return $this->refresh();
       }
