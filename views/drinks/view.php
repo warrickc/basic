@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php echo Html::a('Rate', ['/drinkratings/update', 'userid' => Yii::$app->user->identity->userid, 'drinkid' => $model->drinkid], ['class' => 'btn btn-success']); ?>
     </div>
     <div class="pull-right">
-      <?php echo Html::a('Add Ingredients', ['/ingredientlist/update', 'id' => $model->drinkid], ['class' => 'btn btn-success']); ?>
+      <?php echo Html::a('Add Ingredients', ['/ingredientslist/update', 'id' => $model->drinkid], ['class' => 'btn btn-success']); ?>
     </div>
 
 
