@@ -38,10 +38,15 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
     <div class="pull-left">
     <?php echo Html::tag('h3', "Average Rating: ".$model->averagerating); ?>
-    <?php echo Html::a('Rate', ['/drinkratings/update', 'userid' => Yii::$app->user->identity->userid, 'drinkid' => $model->drinkid], ['class' => 'btn btn-success']); ?>
+    <?php if(!Yii::$app->user->isGuest){
+    echo Html::a('Rate', ['/drinkratings/create', 'userid' => Yii::$app->user->identity->userid, 'drinkid' => $model->drinkid], ['class' => 'btn btn-success']);
+    }
+     ?>
     </div>
     <div class="pull-right">
-      <?php echo Html::a('Add Ingredients', ['/ingredientslist/update', 'drinkid' => $model->drinkid], ['class' => 'btn btn-success']); ?>
+      <?php if(!Yii::$app->user->isGuest){
+        echo Html::a('Add Ingredients', ['/ingredientslist/create', 'drinkid' => $model->drinkid], ['class' => 'btn btn-success']);
+      } ?>
     </div>
 
 
