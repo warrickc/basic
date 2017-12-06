@@ -13,6 +13,7 @@ $this->title = 'Barfly';
           <?php if(Yii::$app->user->isGuest){
             echo Html::tag('h2','Welcome to the drink super(ish)-database!');
             echo Html::a('Click to Sign In or Sign Up', ['login'], ['class' => 'btn btn-success']);
+          }
             else{
               $username = uc(Yii::$app->user->identity->username);
               echo Html::tag('h2', "Welcome ".$username."!");
