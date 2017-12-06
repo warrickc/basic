@@ -66,7 +66,7 @@ class IngredientsController extends Controller
         $model = new Ingredients();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->ingredientid]);
+            return $this->redirect(['index', 'id' => $model->ingredientid]);
         } else {
             return $this->render('create', [
                 'model' => $model,
