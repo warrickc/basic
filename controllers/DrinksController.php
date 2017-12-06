@@ -53,10 +53,6 @@ class DrinksController extends Controller
      */
     public function actionView($id)
     {
-        $currentRating = new Drinkratings();
-        $currentUser = Yii::$app->user->identity->userid;
-        $currentRating = Drinkratings::find()->where("userid = $currentUser AND drinkid = $id");
-
         $query = new query();
         $query-> select(['ingredientname', 'quantity'])
         ->from(['ingredientslist', 'ingredients'])
@@ -67,7 +63,6 @@ class DrinksController extends Controller
         return $this->render('view', [
             'model' => $this->findModel($id),
             'dataProvider' => $otherdataProvider,
-            'currentRating' => $currentRating,
         ]);
     }
 
@@ -136,7 +131,8 @@ class DrinksController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-    public function actionRating($id){
+
+    public function actionRate(){
 
     }
 }
