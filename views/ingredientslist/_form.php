@@ -15,10 +15,10 @@ use app\models\Ingredients;
     <?php $form = ActiveForm::begin(); ?>
 
     <?php
-      $list = Ingredients::findAll(array("ingredientid NOT IN
-        (SELECT ingredientid
+      $list = Ingredients::findAll(array("'ingredientid' NOT IN
+        (SELECT 'ingredientid'
          FROM ingredientlist
-         WHERE drinkid = $model->drinkid)",
+         WHERE 'drinkid' = $model->drinkid)",
       ));
       //$list = $model->findall('ingredientid');
       $items = ArrayHelper::map($list, 'ingredientid', 'ingredientname');
