@@ -16,8 +16,8 @@ use app\models\Ingredients;
 
     <?php
       $items = ArrayHelper::map(Ingredients::find()->all(), 'ingredientid', 'ingredientname');
-      $form->field($model, 'ingredientid')->dropDownList($items)
-     ?>
+    ?>
+      <?= $form->field($model, 'ingredientid')->dropDownList($items)?>
 
     <?= $form->field($model, 'quantity')->textInput(['maxlength' => true]) ?>
 
