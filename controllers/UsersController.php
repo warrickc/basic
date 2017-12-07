@@ -71,6 +71,7 @@ class UsersController extends Controller
   ->from(['drinks', 'drinkratings'])
   ->where("userid = $currentUser AND drinks.drinkid = drinkratings.drinkid")
   ->groupby('drinkname');
+  ->limit(5);
 
   $dataProvider = new ActiveDataProvider([
         'query' => $query,
