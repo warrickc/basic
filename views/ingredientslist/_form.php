@@ -14,7 +14,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'drinkid')->textInput() ?>
 
-    <?= $form->field($model, 'ingredientid')->textInput() ?>
+    <?php
+      $items = ArrayHelper::map(Model::find()-all(), 'drinkname');
+      $form->field($model, 'ingredientid')->dropDownList($items)
+     ?>
 
     <?= $form->field($model, 'quantity')->textInput(['maxlength' => true]) ?>
 
