@@ -6,9 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Ingredientslist */
 
-$this->title = 'Create Ingredientslist';
-$this->params['breadcrumbs'][] = ['label' => 'Ingredientslists', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Add an Ingredient';
 ?>
 <div class="ingredientslist-create">
 

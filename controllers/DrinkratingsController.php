@@ -65,6 +65,8 @@ class DrinkratingsController extends Controller
     public function actionCreate()
     {
         $model = new Drinkratings();
+        $model->userid = Yii::$app->user->identity->userid;
+        $model->drinkid = Yii::$app->getRequest()->getQueryParam('drinkid');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['/drinks/view', 'id' => $model->drinkid]);

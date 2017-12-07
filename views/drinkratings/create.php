@@ -2,13 +2,10 @@
 
 use yii\helpers\Html;
 
-
 /* @var $this yii\web\View */
 /* @var $model app\models\Drinkratings */
 
-$this->title = 'Create Drinkratings';
-$this->params['breadcrumbs'][] = ['label' => 'Drinkratings', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Add Your Rating';
 ?>
 <div class="drinkratings-create">
 

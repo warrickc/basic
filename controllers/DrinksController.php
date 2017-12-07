@@ -60,10 +60,28 @@ class DrinksController extends Controller
         $otherdataProvider = new ActiveDataProvider([
           'query' => $query,
         ]);
+        if(!Yii::$app->user->isGuest){
+        $userid = Yii::$app->user->identity->userid;
+        $exists = new query();
+        $exists-> select(['userid'])
+        ->from(['drinkratings'])
+        ->where("drinkid = $id AND userid = $userid");
+        $recordcheck = new ActiveDataProvider([
+          'query' => $exists,
+        ]);
+
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+            'dataProvider' => $otherdataProvider,
+            'recordcheck' => $recordcheck,
+        ]);
+      } else{
         return $this->render('view', [
             'model' => $this->findModel($id),
             'dataProvider' => $otherdataProvider,
         ]);
+      }
+
     }
 
     /**
