@@ -20,6 +20,8 @@ use yii\db\Query;
       $query->select(['ingredientname'])->from('ingredients')->where("ingredientid NOT IN (SELECT ingredientid FROM ingredientslist WHERE drinkid = $model->drinkid)")->groupby('ingredientname');
       //$list = Ingredients::findAll(array("ingredientid NOT IN (SELECT ingredientid FROM ingredientlist WHERE drinkid = $model->drinkid)",));
       //$list = $model->findall('ingredientid');
+      echo $query->createCommand()->sql;
+      echo $query->createCommand()->getRawSql();
       $items = ArrayHelper::map($query, 'ingredientid', 'ingredientname');
     ?>
       <?= $form->field($model, 'ingredientid')->dropDownList($items)?>
