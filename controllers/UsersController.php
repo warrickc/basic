@@ -115,7 +115,7 @@ class UsersController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->userid]);
+            return $this->redirect(['account', 'id' => $model->userid]);
         } else {
             return $this->render('update', [
                 'model' => $model,
