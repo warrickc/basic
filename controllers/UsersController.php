@@ -70,7 +70,7 @@ class UsersController extends Controller
   $query -> select(['drinkname', 'userid', 'rating'])
   ->from(['drinks', 'drinkratings'])
   ->where("userid = $currentUser AND drinks.drinkid = drinkratings.drinkid")
-  ->groupby('drinkname');
+  ->groupby('drinkname')
   ->limit(5);
 
   $dataProvider = new ActiveDataProvider([
