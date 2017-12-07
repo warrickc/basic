@@ -15,8 +15,16 @@ use app\models\Ingredients;
     <?php $form = ActiveForm::begin(); ?>
 
     <?php
-      $list = $model->findall('ingredientid');
-      $items = ArrayHelper::map(Ingredients::find()->where(["ingredientid NOT IN $list"]), 'ingredientid', 'ingredientname');
+      $list = Ingredients::model()->findAll(array(
+        'select' => '*',
+        'condition' => 'ingredientid NOT IN
+        (SELECT ingredientid
+         FROM IngredientList
+         WHERE drinkid = :drinkid)',
+         'params' => array(':drinkid' = $model->drinkid)
+      ));
+      //$list = $model->findall('ingredientid');
+      $items = ArrayHelper::map($list, 'ingredientid', 'ingredientname');
     ?>
       <?= $form->field($model, 'ingredientid')->dropDownList($items)?>
 
