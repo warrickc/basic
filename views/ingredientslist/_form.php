@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use app\models\Ingredients;
+use yii\db\Query;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Ingredientslist */
