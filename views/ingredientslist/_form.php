@@ -17,7 +17,7 @@ use yii\db\Query;
 
     <?php
       $query = new query();
-      $query = Yii::$app->db->CreateCommand("SELECT ingredientname, ingredientid FROM ingredients WHERE ingredientid NOT IN (SELECT ingredientid FROM ingredientlists WHERE drinkid = $model->drinkid) GROUP BY ingredientname")->queryAll();
+      $query = Yii::$app->db->CreateCommand("SELECT ingredientname, ingredientid FROM ingredients WHERE ingredientid NOT IN (SELECT ingredientid FROM ingredientslist WHERE drinkid = $model->drinkid) GROUP BY ingredientname")->queryAll();
       //$query->select(['ingredientname'])->from('ingredients')->where("ingredientid NOT IN (SELECT ingredientid FROM ingredientslist WHERE drinkid = $model->drinkid)")->groupby('ingredientname');
       //$list = Ingredients::findAll(array("ingredientid NOT IN (SELECT ingredientid FROM ingredientlist WHERE drinkid = $model->drinkid)",));
       //$list = $model->findall('ingredientid');
