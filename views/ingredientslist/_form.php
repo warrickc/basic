@@ -17,8 +17,7 @@ use app\models\Ingredients;
     <?php
       $query = new query();
       $query->select('ingredientid')->where("ingredientid NOT IN (SELECT ingredientid FROM ingredientlist WHERE drinkid = $model->drinkid)");
-      //$list = Ingredients::findAll(array("ingredientid NOT IN (SELECT ingredientid FROM ingredientlist WHERE drinkid = $model->drinkid)",
-      ));
+      //$list = Ingredients::findAll(array("ingredientid NOT IN (SELECT ingredientid FROM ingredientlist WHERE drinkid = $model->drinkid)",));
       //$list = $model->findall('ingredientid');
       $items = ArrayHelper::map($query, 'ingredientid', 'ingredientname');
     ?>
