@@ -65,6 +65,7 @@ class IngredientslistController extends Controller
     public function actionCreate()
     {
         $model = new Ingredientslist();
+        $model->drinkid = Yii::$app->getRequest()->getQueryParam('drinkid');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['/drinks/index', 'drinkid' => $model->drinkid, 'ingredientid' => $model->ingredientid]);

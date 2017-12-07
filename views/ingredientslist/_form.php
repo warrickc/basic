@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
-use app\models\Ingredients
+use app\models\Ingredients;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Ingredientslist */
@@ -13,8 +13,6 @@ use app\models\Ingredients
 <div class="ingredientslist-form">
 
     <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($model, 'drinkid')->textInput() ?>
 
     <?php
       $items = ArrayHelper::map(Ingredients::find()->all(), 'ingredientid', 'ingredientname');
