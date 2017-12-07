@@ -16,7 +16,6 @@ use app\models\Ingredients;
 
     <?php
       $list = Ingredients::findAll(array(
-        'select' => '*',
         'condition' => "ingredientid NOT IN
         (SELECT ingredientid
          FROM ingredientlist
