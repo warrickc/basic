@@ -68,7 +68,7 @@ class IngredientslistController extends Controller
         $model->drinkid = Yii::$app->getRequest()->getQueryParam('drinkid');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['\drinks\view', 'id' => $model->drinkid]);
+            return $this->redirect(['/drinks/view', 'id' => $model->drinkid]);
         } else {
             return $this->render('create', [
                 'model' => $model,
