@@ -21,7 +21,7 @@ use yii\db\Query;
       //$list = Ingredients::findAll(array("ingredientid NOT IN (SELECT ingredientid FROM ingredientlist WHERE drinkid = $model->drinkid)",));
       //$list = $model->findall('ingredientid');
       echo $query->createCommand()->sql;
-      echo $query->createCommand()->getRawSql();
+      echo $query->createCommand()->queryAll();
       $items = ArrayHelper::map($query, 'ingredientid', 'ingredientname');
     ?>
       <?= $form->field($model, 'ingredientid')->dropDownList($items)?>
