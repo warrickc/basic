@@ -15,7 +15,7 @@ use app\models\Ingredients;
     <?php $form = ActiveForm::begin(); ?>
 
     <?php
-      $list = Ingredients::model()->findAll(array(
+      $list = Ingredients::findAll(array(
         'select' => '*',
         'condition' => "ingredientid NOT IN
         (SELECT ingredientid
