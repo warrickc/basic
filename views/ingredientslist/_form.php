@@ -17,7 +17,7 @@ use app\models\Ingredients
     <?= $form->field($model, 'drinkid')->textInput() ?>
 
     <?php
-      $items = ArrayHelper::map(Ingredients::find()-all(), 'drinkname');
+      $items = ArrayHelper::map(Ingredients::find()->all(), 'drinkname');
       $form->field($model, 'ingredientid')->dropDownList($items)
      ?>
 
