@@ -16,7 +16,7 @@ use yii\helpers\ArrayHelper;
     <?= $form->field($model, 'drinkid')->textInput() ?>
 
     <?php
-      $items = ArrayHelper::map(Model::find()-all(), 'drinkname');
+      $items = ArrayHelper::map(Ingredients::find()-all(), 'drinkname');
       $form->field($model, 'ingredientid')->dropDownList($items)
      ?>
 
