@@ -17,11 +17,10 @@ use app\models\Ingredients;
     <?php
       $list = Ingredients::model()->findAll(array(
         'select' => '*',
-        'condition' => 'ingredientid NOT IN
+        'condition' => "ingredientid NOT IN
         (SELECT ingredientid
-         FROM IngredientList
-         WHERE drinkid = :drinkid)',
-         'params' => array(':drinkid' = $model->drinkid)
+         FROM ingredientlist
+         WHERE drinkid = $model->drinkid)",
       ));
       //$list = $model->findall('ingredientid');
       $items = ArrayHelper::map($list, 'ingredientid', 'ingredientname');
